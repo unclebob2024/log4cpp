@@ -65,5 +65,11 @@
 #  endif // LOG4CPP_HAVE_SSTREAM
 #endif // _APPLE_
 
+// Support both modern and deprecated compilers, supplying different c++language constructs via macros
+#if defined(__cplusplus) && (__cplusplus >= 201703L)
+#define LOG4CPP_NOTHROW noexcept
+#else
+#define LOG4CPP_NOTHROW throw()
+#endif //__cplusplus
 
-#endif
+#endif //_LOG4CPP_PORTABILITY_HH
