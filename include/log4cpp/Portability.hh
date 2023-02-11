@@ -66,6 +66,12 @@
 #endif // _APPLE_
 
 // Support both modern and deprecated compilers, supplying different c++language constructs via macros
+#if defined(__cplusplus) && (__cplusplus >= 201103L)
+#define LOG4CPP_UNIQUE_PTR unique_ptr
+#else
+#define LOG4CPP_UNIQUE_PTR auto_ptr
+#endif //__cplusplus
+
 #if defined(__cplusplus) && (__cplusplus >= 201703L)
 #define LOG4CPP_NOTHROW noexcept
 #else
