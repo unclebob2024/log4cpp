@@ -1,3 +1,6 @@
+2023-03-11 17:30  sanchouss_
+	* fix for bug 152: use timespec and clock_settime for c++11 and higher; use stime for glibc version lower than 2.31; none for other cases
+
 2023-02-10 13:22  sanchouss_
 	* Replace obsolete auto_ptr removed in C++17 with newer unique_ptr since C++11
 	* Replace older Non-throwing dynamic exception specification throw() removed in C++20 with newer noexcept since C++11
