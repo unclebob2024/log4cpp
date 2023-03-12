@@ -232,7 +232,18 @@ namespace OnlyManualTesting {
 
 		now += seconds;
 
-		if (stime(&now) == -1) {
+    #if defined(__cplusplus) && (__cplusplus >= 201103L)
+        // For c++11 and higher use struct timespec (since C11);
+        struct timespec ts = {};
+        ts.tv_sec = now;
+        if (clock_settime(CLOCK_REALTIME, &ts) == -1) {
+    #elif defined(__GLIBC__) && defined(__GLIBC_MINOR__) && (__GLIBC__ == 2) && (__GLIBC_MINOR__ < 31)
+        // for earlier/not set version use stime if it is present in glibc:
+        if (stime(&now) == -1) {
+    #else
+        // for other cases just an error
+        {
+    #endif //__cplusplus
 			std::cerr << "Can not set date. Need admin privileges?" << std::endl;
 			return -1;
 		}
