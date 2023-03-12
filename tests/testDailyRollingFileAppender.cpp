@@ -34,13 +34,13 @@ using namespace log4cpp;
 using namespace std;
 static const char* const test_message = "message";
 static const char* const daily_file_prefix = "dailyrolling_file.log";
-static const char* const nestedDir = "nesteddir";
-#ifndef WIN32 
+#define NESTEDDIR "nesteddir"
+#ifndef WIN32
 #define PATHDELIMITER "/" 
 #else 
 #define PATHDELIMITER "\\"
 #endif
-const char* const nesteddirname = "nesteddir"PATHDELIMITER;
+const char* const nesteddirname = NESTEDDIR PATHDELIMITER;
 
 
 class DailyRollingTest {
