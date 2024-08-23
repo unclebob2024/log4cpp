@@ -1,3 +1,6 @@
+2024-08-23 21:31  sanchouss_
+	* Discussion 48226 by Andrew E Page. Alter CMakeLists to allow installation paths for x86 and arm64 be different so that cross-compilation on single host is possible.
+
 2023-03-11 17:30  sanchouss_
 	* fix for bug 152: use timespec and clock_settime for c++11 and higher; use stime for glibc version lower than 2.31; none for other cases
 
