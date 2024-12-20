@@ -17,6 +17,7 @@ liblog4cppinclude_HEADERS =  \
 	FileAppender.hh \
 	DailyRollingFileAppender.hh \
 	RollingFileAppender.hh \
+	TimestampedRollingFileAppender.hh \
 	IdsaAppender.hh \
 	OstreamAppender.hh \
 	StringQueueAppender.hh \

@@ -26,6 +26,7 @@
 #include <log4cpp/FileAppender.hh>
 #include <log4cpp/RollingFileAppender.hh>
 #include <log4cpp/DailyRollingFileAppender.hh>
+#include <log4cpp/TimestampedRollingFileAppender.hh>
 #include <log4cpp/AbortAppender.hh>
 #ifdef WIN32
 #include <log4cpp/Win32DebugAppender.hh>
@@ -232,6 +233,14 @@ namespace log4cpp {
             bool append = _properties.getBool(appenderPrefix + ".append", true);
             appender = new RollingFileAppender(appenderName, fileName, maxFileSize, maxBackupIndex,
                 append);
+        }
+        else if (appenderType == "TimestampedRollingFileAppender") {
+            std::string fileName = _properties.getString(appenderPrefix + ".fileName", "foobar");
+            size_t maxFileSize = _properties.getInt(appenderPrefix + ".maxFileSize", 10*1024*1024);
+            std::int32_t maxBackupCount = _properties.getInt(appenderPrefix + ".maxBackupCount", 2);
+            std::int32_t maxBackupDays =  _properties.getInt(appenderPrefix + ".maxBackupDays", 30);
+            bool append = _properties.getBool(appenderPrefix + ".append", true);
+            appender = new TimestampedRollingFileAppender(appenderName, fileName, maxFileSize, maxBackupCount, maxBackupDays, nullptr, append);
         }
         else if (appenderType == "DailyRollingFileAppender") {
             std::string fileName = _properties.getString(appenderPrefix + ".fileName", "foobar");

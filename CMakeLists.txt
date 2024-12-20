@@ -45,6 +45,7 @@ ADD_LIBRARY ( ${LOG4CPP_LIBRARY_NAME}
   src/FileAppender.cpp
   src/DailyRollingFileAppender.cpp
   src/RollingFileAppender.cpp
+  src/TimestampedRollingFileAppender.cpp
   src/FixedContextCategory.cpp
   src/IdsaAppender.cpp
   src/OstreamAppender.cpp

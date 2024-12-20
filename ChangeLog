@@ -1,3 +1,6 @@
+2024-09-06 11:00  Bob
+	* Added TimestampedRollingFileAppender.cpp
+
 2023-03-11 17:30  sanchouss_
 	* fix for bug 152: use timespec and clock_settime for c++11 and higher; use stime for glibc version lower than 2.31; none for other cases
 
@@ -3834,4 +3837,3 @@
 	  src/HierarchyMaintainer.cpp, src/LoggingEvent.cpp, src/Makefile,
 	  src/Priority.cpp, src/SimpleLayout.cpp, src/testmain.cpp: Initial
 	  revision
-

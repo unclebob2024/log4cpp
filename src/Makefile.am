@@ -19,6 +19,7 @@ liblog4cpp_la_SOURCES = \
 	FileAppender.cpp \
 	DailyRollingFileAppender.cpp \
 	RollingFileAppender.cpp \
+	TimestampedRollingFileAppender.cpp \
 	FixedContextCategory.cpp \
 	IdsaAppender.cpp \
 	OstreamAppender.cpp \
