@@ -335,6 +335,13 @@ namespace log4cpp {
             return getStream(Priority::DEBUG);
         }
 
+        /**
+         * This is a mock trace log function
+         */
+        inline CategoryStream traceStream() {
+            return getStream(Priority::DEBUG);
+        }
+
         /** 
          * Log a message with info priority.
          * @param stringFormat Format specifier for the string to write 
